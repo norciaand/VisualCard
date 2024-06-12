@@ -46,7 +46,7 @@ h1{
 button{
     color: #ffffff;
     border: none;
-    background-color: #cffc2d;
+    background-color: #888888;
     font-size: 18px;
     font-family: Montserrat;
     font-weight: 700;
@@ -63,15 +63,18 @@ button:hover{
 }
 
 #button_plus{
+    width: 60px;
     background-color: #2d53fc;
 }
 
 #button_minus{
+    width: 60px;
     background-color: #fc2d2d;
 }
 
 #button_res{
-    background-color: #8d8d8d;
+    width: 60px;
+    background-color: #fd9824;
 }
 
 #main{
