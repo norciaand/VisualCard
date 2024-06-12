@@ -1,4 +1,4 @@
-
+let clean;
 
 //PULSANTI
 const button_n = document.getElementById("button_n");
@@ -20,12 +20,23 @@ button_n.addEventListener('click', () =>{
 
 button_plus.addEventListener('click', () =>{
 
+    if (clean){
+        main.innerHTML = ""
+        clean = false;
+        main.style.height = "fit-content";
+    }
+
     button_n.textContent++;
 
     let nuovaCard = document.createElement('div');
     nuovaCard.classList.add("card");
-    nuovaCard.style.backgroundColor = randomColor();
-    nuovaCard.textContent="x";
+    nuovaCard.style.backgroundColor = randomColor();  
+    let testo = document.createElement('textarea');
+    testo.cols = 40;
+    testo.rows = 5;
+    nuovaCard.appendChild(testo)
+
+
     arrayCard.push(nuovaCard);
     main.appendChild(nuovaCard);
 })
@@ -38,4 +49,14 @@ button_ref.addEventListener('click', () =>{
     arrayCard.length = 0;
     button_n.textContent=0;
 
+    main.style.height = "10vh";
+    main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
+    clean = true;
 })
+
+
+addEventListener("DOMContentLoaded", () => {
+    main.style.height = "10vh";
+    main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
+    clean = true;
+});
