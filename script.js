@@ -32,15 +32,7 @@ button_plus.addEventListener('click', () =>{
     let nuovaCard = document.createElement('div');
     nuovaCard.classList.add("card");
     nuovaCard.style.backgroundColor = randomColor();
-    let titolo = document.createElement('input');
-    titolo.type = "text";  
-    let testo = document.createElement('textarea');
-    testo.cols = 40;
-    testo.rows = 5;
-    nuovaCard.appendChild(titolo);
-    nuovaCard.appendChild(testo);   
-
-
+    nuovaCard.textContent="x";
     arrayCard.push(nuovaCard);
     main.appendChild(nuovaCard);
 });
@@ -53,16 +45,4 @@ button_ref.addEventListener('click', () =>{
     arrayCard.length = 0;
     button_n.textContent=0;
 
-    main.style.height = "10vh";
-    main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
-    clean = true;
-});
-
-button_full.addEventListener('click', );
-
-
-addEventListener("DOMContentLoaded", () => {
-    main.style.height = "10vh";
-    main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
-    clean = true;
-});
+})
