@@ -130,7 +130,7 @@ button:hover{
     border: none;
     background-color: rgba(255, 255, 255, 0);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
     font-size: 20px;
@@ -141,30 +141,26 @@ button:hover{
     resize: none;
 }
 
-.card input:hover{
-    transform: scale(1.025);
-    box-shadow: 0 5px 20px rgba(0,0,0,.05);
-    background-color: rgba(255, 255, 255, 0.479);
-}
-
 textarea{
     display: block;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
     font-size: 16px;
     font-weight: 400;
     font-family: Montserrat;
+    margin-top: 5px;
     
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
     resize: none;
 }
 
-textarea:hover{
+textarea:hover, textarea:focus, .card input:hover, .card input:focus{
     transform: scale(1.025);
     box-shadow: 0 5px 20px rgba(0,0,0,.05);
     background-color: rgba(255, 255, 255, 0.479);
+    outline: none !important;
 }

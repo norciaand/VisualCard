@@ -14,7 +14,6 @@ function randomColor(){
 }
 
 
-
 button_n.addEventListener('click', () =>{
     alert("Colonne Attuali: " + button_n.textContent);
 });
@@ -56,14 +55,7 @@ button_ref.addEventListener('click', () =>{
     main.style.height = "10vh";
     main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
     clean = true;
-<<<<<<< HEAD
 });
-
-button_full.addEventListener('click', );
-=======
-})
->>>>>>> 5f011b297a72e86c58e3a5ee3f03e52bf1f183e8
-
 
 addEventListener("DOMContentLoaded", () => {
     main.style.height = "10vh";
