@@ -1,7 +1,17 @@
-let n = 2;
+
+
+//PULSANTI
 const button_n = document.getElementById("button_n");
 const button_plus = document.getElementById("button_plus");
-let arrayCard = []
+const button_ref = document.getElementById("button_ref");
+const button_full = document.getElementById("button_full");
+const main = document.getElementById("main");
+let arrayCard = [];
+
+function randomColor(){
+    const colori = ["#ffd0d0", "#d0d1ff", "#d8ffd0", "#fffad0"];
+    return colori[Math.floor(Math.random() * 4)];
+}
 
 
 button_n.addEventListener('click', () =>{
@@ -9,6 +19,23 @@ button_n.addEventListener('click', () =>{
 })
 
 button_plus.addEventListener('click', () =>{
+
+    button_n.textContent++;
+
     let nuovaCard = document.createElement('div');
-    
+    nuovaCard.classList.add("card");
+    nuovaCard.style.backgroundColor = randomColor();
+    nuovaCard.textContent="x";
+    arrayCard.push(nuovaCard);
+    main.appendChild(nuovaCard);
+})
+
+button_ref.addEventListener('click', () =>{
+    arrayCard.forEach((item) => {
+        main.removeChild(item);
+    });
+
+    arrayCard.length = 0;
+    button_n.textContent=0;
+
 })
