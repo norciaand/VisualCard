@@ -14,26 +14,6 @@ function randomColor(){
 }
 
 
-function toggleFullScreen() {
-    if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-        if (document.documentElement.requestFullScreen) {
-            document.documentElement.requestFullScreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullScreen) {
-            document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        }
-    } else {
-        if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-        }
-    }
-}
 
 button_n.addEventListener('click', () =>{
     alert("Colonne Attuali: " + button_n.textContent);
@@ -78,7 +58,7 @@ button_ref.addEventListener('click', () =>{
     clean = true;
 });
 
-button_full.addEventListener('click', toggleFullScreen());
+button_full.addEventListener('click', );
 
 
 addEventListener("DOMContentLoaded", () => {
