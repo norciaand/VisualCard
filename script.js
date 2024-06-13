@@ -1,4 +1,5 @@
 let clean;
+let current_color = 4;
 let project_title = "Visual Cards"
 
 //PULSANTI
@@ -6,11 +7,12 @@ const header1 = document.getElementById("title");
 const button_n = document.getElementById("button_n");
 const button_plus = document.getElementById("button_plus");
 const button_ref = document.getElementById("button_ref");
-const button_full = document.getElementById("button_full");
+const button_color = document.getElementById("button_color");
 const button_rin = document.getElementById("rin");
 const main = document.getElementById("main");
 
 const colori = ["#ffd0d0", "#d0d1ff", "#d8ffd0", "#fffad0"];
+const colori2 = ["#ff4a4a", "#4a4dfc", "#49a946", "#ffe74a"];
 let arrayCard = [];
 
 
@@ -40,9 +42,15 @@ button_plus.addEventListener('click', () =>{
         main.style.height = "fit-content";
     }
     button_n.textContent++;
+
     let nuovaCard = document.createElement('div');
     nuovaCard.classList.add("card");
-    nuovaCard.style.backgroundColor = randomColor();
+    if (current_color != 4){
+        nuovaCard.style.backgroundColor = colori[current_color];
+    } else {
+        nuovaCard.style.backgroundColor = randomColor();
+    }
+    
     let titolo = document.createElement('input');
     titolo.type = "text";  
     let testo = document.createElement('textarea');
@@ -57,13 +65,10 @@ button_plus.addEventListener('click', () =>{
 
     nuovaCard.addEventListener('contextmenu', (e) => {
         e.preventDefault();
-        let x = prompt("Inserisci il colore: \n1: Rosso\n2: Blu\n3: Verde\n4: Giallo", "0");
-        if (x > 4 || x < 1){
-            x = randomColor();
-        } else {
-            x = colori[x-1];
-        }
-        nuovaCard.style.backgroundColor = x;
+        main.removeChild(nuovaCard);
+        arrayCard.length = 0;
+        arrayCard.concat(main.childNodes) ;
+        button_n.textContent--;
     }, false);
 
 });
@@ -81,7 +86,25 @@ button_ref.addEventListener('click', () =>{
     clean = true;
 });
 
+button_color.addEventListener('click',() =>{
+
+    if (current_color == 4){
+        current_color = 0;
+    } else {
+        current_color++;
+    }
+
+    if (current_color != 4){
+        button_color.style.backgroundColor = colori2[current_color];
+    } else {
+        button_color.style.backgroundColor = "#888888";
+    }
+    
+
+});
+
 addEventListener("DOMContentLoaded", () => {
+    button_color.style.backgroundColor = "#888888";
     header1.textContent = project_title;
     main.style.height = "10vh";
     main.innerHTML = "<h3>PREMI + PER INIZIARE</h3>"
